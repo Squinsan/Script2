@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.util.Locale;
+public class Main {
+
+
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+       Scanner ler = new Scanner (System.in);
+        double Notas []= new double[4];
+        double exame,reMedia,media;
+        for(int x=0;x<4;x++){
+            Notas[x]=ler.nextFloat();
+        }
+
+           media = ((Notas[0]*2)+(Notas[1]*3)+(Notas[2]*4)+(Notas[3]*1))/10;
+          if(media > 5.0 && media < 5.9){
+              exame=ler.nextFloat();
+              reMedia = (media+exame)/2;
+               System.out.printf("Media: %.1f\n",media);
+               System.out.println("Aluno em exame.");
+               System.out.printf("Nota do exame: %.1f\n",exame);
+              if(reMedia > 5.0){
+                  System.out.println("Aluno aprovado.");
+              }else{
+                   System.out.println("Aluno reprovado.");
+              }
+              System.out.printf("Media final: %.1f\n",reMedia);
+
+          }else{
+              if(media>=7.0){
+                  System.out.println("Aluno aprovado.");
+                }else{
+                  System.out.println("Aluno reprovado.");
+              }
+          }  
+     }
+}
